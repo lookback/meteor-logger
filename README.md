@@ -23,6 +23,8 @@ Logger.error('Someone screwed up ...');
 Logger.debug('Herp-a-derp!');
 ```
 
+Locally, the `info`, `warn`, `debug`, and `error` methods correspond to their corresponding methods on the `console` object (with the exception of `debug`: it uses `console.log`).
+
 Each `Logger` method takes a message as a string, and optionally an array of tags:
 
 ```js
