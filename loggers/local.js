@@ -9,8 +9,16 @@ Loggers.local = function(level, message, tags) {
     }
   })();
 
-  if(tags)
-    console[method](message, tags);
-  else
+  if(tags) {
+    /*
+      Output tags before message in brackets, for
+      easy scanning:
+
+        [EMAILS SOMETHING-ELSE] This is my message.
+    */
+    tags = _.invoke(tags, 'toUpperCase').join(' ');
+    console[method]('[' + tags + ']', message);
+  } else {
     console[method](message);
+  }
 };

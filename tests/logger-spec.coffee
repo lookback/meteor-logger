@@ -40,7 +40,7 @@ describe 'Logger', ->
     it 'should log tags', ->
       ['info', 'warn', 'error', 'debug'].forEach (method) ->
         Logger[method]('Foo', ['bar', 'baz'])
-        spies[method].should.have.been.calledWith 'Foo', ['bar', 'baz']
+        spies[method].should.have.been.calledWith '[BAR BAZ]', 'Foo'
 
 describe 'logger', ->
 
