@@ -1,5 +1,7 @@
 # Lookback Logger
 
+[![Circle CI](https://circleci.com/gh/lookback/meteor-logger.svg?style=svg)](https://circleci.com/gh/lookback/meteor-logger)
+
 A Meteor logger that logs to [Loggly](https://www.loggly.com/) or local `console.log`.
 
 ## Install
