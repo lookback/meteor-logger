@@ -12,6 +12,7 @@ Npm.depends({
 var where = 'server';
 
 Package.onUse(function (api) {
+  api.versionsFrom('0.9.3');
   api.use('underscore', where);
 
   api.addFiles([
