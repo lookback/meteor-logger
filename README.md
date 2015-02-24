@@ -18,7 +18,7 @@ A global `Logger` object is automatically exported from within the package and a
 Logger.info('Some logging');
 Logger.warn('Watch out!');
 Logger.error('Someone screwed up ...');
-Logger.debug('Herp-a-derp.');
+Logger.debug('Herp-a-derp!');
 ```
 
 Each `Logger` method takes a message as a string, and optionally an array of tags:
