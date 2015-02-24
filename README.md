@@ -77,6 +77,7 @@ meteor test-packages ./
 
 ## Version history
 
+- `1.1.0` - Locally, output tags in front of message for easy scanning.
 - `1.0.0` - Initial publish.
 
 ## Contributions
