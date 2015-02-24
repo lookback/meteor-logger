@@ -1,0 +1,7 @@
+dependencies:
+  override:
+    - npm install spacejam
+
+  test:
+    override:
+      - ./node_modules/spacejam/bin/spacejam test-packages ./
