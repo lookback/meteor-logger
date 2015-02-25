@@ -7,8 +7,15 @@ Loggers.loggly = function(logglyClient, baseParams) {
   // @param {string} message
   // @param {(string|array)} [tags]
   return function log(level, message, tags) {
-    if (tags && _.isString(tags))
-      tags = [tags];
+    if(tags) {
+      var tagsArgs = _.rest(arguments, 2);
+
+      if(_.isString(tags)) {
+        tags = [tags];
+      } else if(tagsArgs.length){
+        tags = tagsArgs;
+      }
+    }
 
     var toLog = {
       message: message,

@@ -1,4 +1,9 @@
 // Local log
+
+function toString(arr) {
+  return '[' + _.invoke(arr, 'toUpperCase').join(' ') + ']';
+}
+
 Loggers.local = function(level, message, tags) {
   var method = (function() {
     switch (level) {
@@ -16,8 +21,18 @@ Loggers.local = function(level, message, tags) {
 
         [EMAILS SOMETHING-ELSE] This is my message.
     */
-    tags = _.invoke(tags, 'toUpperCase').join(' ');
-    console[method]('[' + tags + ']', message);
+
+    var tagsArgs = _.rest(arguments, 2);
+
+    if(!Array.isArray(tags) && tagsArgs.length) {
+      tags = tagsArgs;
+    }
+
+    if(Array.isArray(tags)) {
+      tags = toString(tags);
+    }
+
+    console[method](tags, message);
   } else {
     console[method](message);
   }
