@@ -43,6 +43,8 @@ describe 'Logger', ->
         spies[method].should.have.been.calledWith '[BAR BAZ]', 'Foo'
 
     it 'should be able to take a dynamic list of tags', ->
+      Logger.info 'Foo', 'tag'
+      spies.info.should.have.been.calledWith '[TAG]', 'Foo'
       Logger.info 'Foo', 'tag1', 'tag2', 'tag3'
       spies.info.should.have.been.calledWith '[TAG1 TAG2 TAG3]', 'Foo'
 
