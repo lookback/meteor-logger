@@ -14,7 +14,7 @@ meteor add lookback:logger
 
 ## Usage
 
-A global `Logger` object is automatically exported from within the package and available in your app. It has the log level methods `debug`, `warn`, `error` and `info`.
+A global `Logger` object is automatically exported from within the package and available in your app (server side only). It has the log level methods `debug`, `warn`, `error` and `info`.
 
 ```js
 Logger.info('Some logging');
