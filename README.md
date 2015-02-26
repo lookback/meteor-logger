@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/lookback/meteor-logger.svg?style=svg)](https://circleci.com/gh/lookback/meteor-logger)
 
-A Meteor logger that logs to [Loggly](https://www.loggly.com/) or local `console.log`.
+A Meteor logger that logs to [Loggly](https://www.loggly.com/) or local `console.log` on the server (no client side support as of now).
 
 ## Install
 
@@ -14,7 +14,7 @@ meteor add lookback:logger
 
 ## Usage
 
-A global `Logger` object is automatically exported from within the package and available in your app. It has the log level methods `debug`, `warn`, `error` and `info`.
+A global `Logger` object is automatically exported from within the package and available in your app (server side only). It has the log level methods `debug`, `warn`, `error` and `info`.
 
 ```js
 Logger.info('Some logging');
