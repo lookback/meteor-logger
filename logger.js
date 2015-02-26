@@ -20,11 +20,15 @@ function attachLogLevels(loggers) {
     'debug'
   ];
 
-  return loggers.reduce(function(memo, logger) {
-    levels.forEach(function(level) {
-      // Bind level value as first argument to each logger function
-      memo[level] = _.partial(logger, level);
-    });
+  return levels.reduce(function(memo, level) {
+    memo[level] = function(/* arguments */) {
+      // Call all loggers as:
+      //  logger(level, arguments...)
+      // Usually level, message, tags.
+      var args = _.toArray(arguments);
+      args.unshift(level);
+      _.invoke(loggers, 'apply', null, args);
+    };
 
     return memo;
   }, {});
