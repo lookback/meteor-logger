@@ -2,7 +2,7 @@ Package.describe({
   name: 'lookback:logger',
   summary: 'Logger for Meteor with Loggly integration',
   git: 'https://github.com/lookback/meteor-logger',
-  version: '1.1.1'
+  version: '1.2.0'
 });
 
 Npm.depends({

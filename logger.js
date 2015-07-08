@@ -80,7 +80,7 @@ logger = function(options) {
       // Use environment name from options or default to NODE_ENV.
       baseParams.environment = baseParams.environment || process.env.NODE_ENV;
 
-      baseParams.platform = 'site';
+      baseParams.platform = baseParams.platform || 'site';
 
       loggers.push(Loggers.loggly(logglyClient, baseParams));
     } catch (e) {
